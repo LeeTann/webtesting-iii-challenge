@@ -32,6 +32,13 @@ describe('<Display /> Tests', () => {
         const closed = getByText(/closed/i)
 
         expect(closed).toHaveClass('red-led')
-        
+    })
+
+    it('should display green-led when open', () => {
+        const { getByText } = render(<Display closed={false} />)
+
+        const open = getByText(/open/i)
+
+        expect(open).toHaveClass('green-led')
     })
 })
